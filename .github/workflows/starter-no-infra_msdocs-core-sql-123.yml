@@ -22,7 +22,7 @@ jobs:
         run: dotnet build --configuration Release
 
       - name: Publish the project
-        run: dotnet publish path/to/your/project.csproj -c Release -o ./publish
+        run: dotnet publish ${{env.DOTNET_ROOT}}/myapp -c Release -o ./publish
 
       - name: Install dotnet ef
         run: dotnet tool install --global dotnet-ef --version 8.*
