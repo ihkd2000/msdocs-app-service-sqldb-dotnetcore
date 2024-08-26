@@ -9,9 +9,12 @@ if(builder.Environment.IsDevelopment())
     // builder.Services.AddDbContext<MyDatabaseContext>(options =>
     //     options.UseSqlServer(builder.Configuration.GetConnectionString("MyDbConnection")));
     // builder.Services.AddDistributedMemoryCache();
-    builder.Services.AddDbContext<MyDatabaseContext>(options =>
-        options.UseMySql(builder.Configuration.GetConnectionString("MyDbConnection"), 
-        new MySqlServerVersion(new Version(8, 0, 21)))); // Replace with your MySQL version
+    // builder.Services.AddDbContext<MyDatabaseContext>(options =>
+    //     options.UseMySql(builder.Configuration.GetConnectionString("MyDbConnection"), 
+    //     new MySqlServerVersion(new Version(8, 0, 21)))); // Replace with your MySQL version
+        builder.Services.AddDbContext<MyDatabaseContext>(options =>
+        options.UseMySQL(builder.Configuration.GetConnectionString("MyDbConnection")));
+
     builder.Services.AddDistributedMemoryCache();
 
 }
